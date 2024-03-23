@@ -1,6 +1,8 @@
 # program 3
 # Input Information and print in a fancy way
-
+import pyfiglet
+import shutil
+import time
 # Add tkinter to the program
 import tkinter as tk
 from tkinter import font
@@ -29,4 +31,13 @@ hobby_entry.grid(row=2, column=1, padx=15, pady=15)
 dream_entry=tk.Entry(window, font=font.Font(family="Consolas", size=15))
 dream_entry.grid(row=3, column=1, padx=15, pady=15)
 # Add fancy way to print
+def print_information():
+    name = name_entry.get()
+    age = age_entry.get()
+    hobby = hobby_entry.get()
+    dream = dream_entry.get()
+    text = pyfiglet.figlet_format(f"Hello {name} !\nAge : {age}\nYou love {hobby}\nYou'd love to visit {dream}")
+    for char in text:
+        print(char, end="", flush=True)
+        time.sleep(0.008)
 # Add print button and finish up the program
