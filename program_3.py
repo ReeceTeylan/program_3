@@ -41,3 +41,9 @@ def print_information():
         print(char, end="", flush=True)
         time.sleep(0.008)
 # Add print button and finish up the program
+print_button = tk.Button(window, text="Print Information",
+font=font.Font(family="Consolas", size=17),
+command=print_information)
+print_button.grid(row=4, column=0, columnspan=2, padx=15, pady=15)
+
+window.mainloop
